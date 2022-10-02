@@ -3,6 +3,7 @@ import Help from "../components/Main/Help/Help";
 import Home from "../components/Main/Home/Home";
 import NotFound from "../components/Main/NotFound/NotFound";
 import Orders from "../components/Main/Orders/Orders";
+import PostDetails from "../components/Main/PostDetails/PostDetails";
 import Posts from "../components/Main/Posts/Posts";
 import Shop from "../components/Main/Shop/Shop";
 import Main from "../layout/Main";
@@ -21,6 +22,16 @@ export const router = createBrowserRouter([
         element: <Posts />,
         loader: async () => {
           return fetch(`https://jsonplaceholder.typicode.com/posts`);
+        },
+      },
+      {
+        path: "/posts/:postId",
+        element: <PostDetails></PostDetails>,
+        loader: async ({ params }) => {
+          console.log(params);
+          return fetch(
+            `https://jsonplaceholder.typicode.com/posts/${params.postId}`
+          );
         },
       },
       { path: "*", element: <NotFound /> },
