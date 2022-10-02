@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,16 +13,16 @@ const Header = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <Link to="/shop">Shop</Link>
+              <NavLink to="/shop">Shop</NavLink>
             </li>
             <li>
-              <Link to="/orders">Orders</Link>
+              <NavLink to="/orders">Orders</NavLink>
             </li>
             <li>
-              <Link to="/help">Help</Link>
+              <NavLink to="/help">Help</NavLink>
             </li>
             <li>
-              <Link to="/posts">Blog Posts</Link>
+              <NavLink to="/posts">Blog Posts</NavLink>
             </li>
           </ul>
         </div>
