@@ -1,12 +1,12 @@
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
-import Header from "./components/Header/Header";
-import Help from "./components/Main/Help/Help";
-import Home from "./components/Main/Home/Home";
-import Orders from "./components/Main/Orders/Orders";
-import Shop from "./components/Main/Shop/Shop";
+// Components
+import Shop from "./Shop/Shop";
+import Orders from "./Orders/Orders";
+import Help from "./Help/Help";
+import Home from "./Home/Home";
 
-function App() {
+const Main = () => {
   const routers = createBrowserRouter([
     { path: "/", element: <Home /> },
     { path: "/shop", element: <Shop /> },
@@ -15,10 +15,9 @@ function App() {
   ]);
   return (
     <div className="container mx-auto mt-10">
-      {/* <Header /> */}
       <RouterProvider router={routers} />
     </div>
   );
-}
+};
 
-export default App;
+export default Main;
